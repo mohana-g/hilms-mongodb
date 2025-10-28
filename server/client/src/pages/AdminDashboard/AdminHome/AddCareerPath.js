@@ -76,7 +76,7 @@ const AddCareerPath = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://hilms.onrender.com/api/courses")
+      .get("https://hilms-mongodb.onrender.com/api/courses")
       .then((res) => {
         const data = res.data;
         if (Array.isArray(data)) {
@@ -98,7 +98,7 @@ const AddCareerPath = () => {
   // fetch existing career paths
   const fetchCareerPaths = () => {
     axios
-      .get("https://hilms.onrender.com/api/career-paths")
+      .get("https://hilms-mongodb.onrender.com/api/career-paths")
       .then((res) => {
         if (Array.isArray(res.data.data)) {
           setCareerPaths(res.data.data); // ✅ use nested "data"
@@ -193,7 +193,7 @@ const AddCareerPath = () => {
 
     if (editId) {
       axios
-        .put(`https://hilms.onrender.com/api/career-paths/${editId}`, careerPath)
+        .put(`https://hilms-mongodb.onrender.com/api/career-paths/${editId}`, careerPath)
         .then(() => {
           setEditId(null);
           resetForm();
@@ -204,7 +204,7 @@ const AddCareerPath = () => {
         .finally(() => setLoading(false));
     } else {
       axios
-        .post("https://hilms.onrender.com/api/career-paths", careerPath)
+        .post("https://hilms-mongodb.onrender.com/api/career-paths", careerPath)
         .then(() => {
           resetForm();
           fetchCareerPaths();
@@ -265,7 +265,7 @@ const AddCareerPath = () => {
   // delete
   const handleDelete = (id) => {
     axios
-      .delete(`https://hilms.onrender.com/api/career-paths/${id}`)
+      .delete(`https://hilms-mongodb.onrender.com/api/career-paths/${id}`)
       .then(() => {
         fetchCareerPaths();
         showMessage("success", "Career path deleted successfully!");

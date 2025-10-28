@@ -48,7 +48,7 @@ const LEditAccount = () => {
           setLoading(false);
           return;
         }
-        const response = await axios.get("https://hilms.onrender.com/api/learner/profile", {
+        const response = await axios.get("https://hilms-mongodb.onrender.com/api/learner/profile", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -82,7 +82,7 @@ const LEditAccount = () => {
         return;
       }
       await axios.put(
-        "https://hilms.onrender.com/api/learner/update-password",
+        "https://hilms-mongodb.onrender.com/api/learner/update-password",
         {
           currentPassword: formData.currentPassword,
           newPassword: formData.newPassword,

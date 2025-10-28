@@ -15,7 +15,7 @@
 //     const fetchPath = async () => {
 //       try {
 //         const res = await fetch(
-//           `https://hilms.onrender.com/api/career-paths/${pathId}`
+//           `https://hilms-mongodb.onrender.com/api/career-paths/${pathId}`
 //         );
 //         if (!res.ok) throw new Error("Failed to fetch career path");
 //         const data = await res.json();
@@ -153,7 +153,7 @@ const CareerPathDetail = () => {
   const fetchPath = async () => {
     try {
       const res = await fetch(
-        `https://hilms.onrender.com/api/career-paths/${pathId}`
+        `https://hilms-mongodb.onrender.com/api/career-paths/${pathId}`
       );
       if (!res.ok) throw new Error("Failed to fetch career path");
       const data = await res.json();
@@ -163,7 +163,7 @@ const CareerPathDetail = () => {
       if (localStorage.getItem("role") === "learner") {
         const token = localStorage.getItem("token");
         const progressRes = await fetch(
-          `https://hilms.onrender.com/api/learner/progress`,
+          `https://hilms-mongodb.onrender.com/api/learner/progress`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         if (progressRes.ok) {

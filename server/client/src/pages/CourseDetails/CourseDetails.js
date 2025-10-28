@@ -64,7 +64,7 @@ const CourseDetails = () => {
     const fetchCourseDetails = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`https://hilms.onrender.com/api/courses/course-details/${courseId}`);
+        const response = await axios.get(`https://hilms-mongodb.onrender.com/api/courses/course-details/${courseId}`);
         setCourse(response?.data?.data || {});
       } catch (err) {
         console.error("Error fetching course details:", err.message);
@@ -93,7 +93,7 @@ const CourseDetails = () => {
 
   try {
     await axios.post(
-      `https://hilms.onrender.com/api/courses/course-details/${courseId}/enroll`,
+      `https://hilms-mongodb.onrender.com/api/courses/course-details/${courseId}/enroll`,
       {},
       { headers: { Authorization: `Bearer ${token}` } }
     );

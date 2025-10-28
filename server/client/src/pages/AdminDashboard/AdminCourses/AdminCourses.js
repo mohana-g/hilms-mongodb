@@ -10,7 +10,7 @@
 //   useEffect(() => {
 //     const fetchCourses = async () => {
 //       try {
-//         const response = await fetch("https://hilms.onrender.com/api/courses"); // API URL
+//         const response = await fetch("https://hilms-mongodb.onrender.com/api/courses"); // API URL
 //         if (!response.ok) {
 //           throw new Error("Failed to fetch courses");
 //         }
@@ -154,7 +154,7 @@ const CoursesPage = () => {
     const fetchCourses = async () => {
       setLoading(true);
       try {
-        const response = await fetch("https://hilms.onrender.com/api/courses"); // API URL
+        const response = await fetch("https://hilms-mongodb.onrender.com/api/courses"); // API URL
         if (!response.ok) {
           throw new Error("Failed to fetch courses");
         }

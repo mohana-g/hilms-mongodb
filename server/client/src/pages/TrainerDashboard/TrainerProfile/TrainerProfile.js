@@ -36,7 +36,7 @@ const TrainerProfile = () => {
           return;
         }
 
-        const response = await axios.get("https://hilms.onrender.com/api/trainer/profile", {
+        const response = await axios.get("https://hilms-mongodb.onrender.com/api/trainer/profile", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -73,7 +73,7 @@ const TrainerProfile = () => {
         return;
       }
 
-      await axios.put("https://hilms.onrender.com/api/trainer/profile/update", profile, {
+      await axios.put("https://hilms-mongodb.onrender.com/api/trainer/profile/update", profile, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
